@@ -33,6 +33,7 @@ body {
 markdown-style {
   min-height: 60vh;
   grid-area: main;
+  margin-bottom: 18px !important;
 }
 markdown-style img {
   background-color: transparent !important;
@@ -93,6 +94,23 @@ a {
 a:hover {
   text-decoration: underline;
 }
+a.gototop {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: inline-block;
+  background: var(--color-theme-text);
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 9999;
+  color: var(--color-theme-bg);
+  font-size: 10px;
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+a.gototop:hover {
+  opacity: 1;
+}
 
 .header {
   position: fixed;
@@ -121,7 +139,8 @@ a:hover {
 .header .logo .title {
   padding-left: 8px;
 }
-.header .logo img {
+.header .logo img,
+.header .logo svg {
   height: 26px;
   display: block;
 }
@@ -161,8 +180,12 @@ footer.article-footer {
   display: flex;
   align-items: center;
   font-size: 14px;
-  padding-bottom: 15px;
   justify-content: space-between;
+  background-color: var(--color-canvas-subtle);
+  padding: 10px;
+  padding-right: 12px;
+  border-radius: 5px;
+  margin-top: 26px;
 }
 
 footer.article-footer a {
@@ -181,6 +204,31 @@ footer.article-footer a.edit-button svg {
 footer.article-footer .atime {
   font-size: 12px;
   color: var(--color-fg-muted);
+  margin-top: 2px;
+}
+footer.article-footer > section {
+  display: flex;
+  align-items: center;
+}
+
+.previous {
+  display: flex;
+  align-items: center;
+  grid-gap: 12px;
+  gap: 12px;
+}
+.previous a {
+  display: flex;
+  align-items: center;
+}
+.previous a svg {
+  margin-top: 1px;
+}
+.previous a.prev svg {
+  margin-right: 3px;
+}
+.previous a.next svg {
+  margin-left: 3px;
 }
 
 .footer {
